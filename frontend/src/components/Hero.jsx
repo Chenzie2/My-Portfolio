@@ -1,12 +1,12 @@
 import React from 'react'
-import { FiSparkles } from 'react-icons/fi'
+import { FiStar } from 'react-icons/fi'
 
 const Hero = () => {
   return (
     <section id="about" className="py-12 md:py-20 animate-fade-in">
       <div className="text-center">
         <div className="inline-block mb-4 p-3 bg-pink-50 dark:bg-pink-900/20 rounded-full">
-          <FiSparkles className="text-4xl text-pink-500 animate-bounce-slow" />
+          <FiStar className="text-4xl text-pink-500 animate-bounce-slow" />
         </div>
         
         <h1 className="text-4xl md:text-6xl font-bold mb-4">

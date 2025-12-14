@@ -1,5 +1,5 @@
 import React from 'react'
-import { FiCode, FiLayout, FiDatabase, FiPenTool } from 'react-icons/fi'
+import { FiLayout, FiDatabase, FiCode, FiPenTool } from 'react-icons/fi'
 
 const skills = [
   {
