@@ -1,5 +1,6 @@
 import React from 'react'
 import { FiArrowRight } from 'react-icons/fi'
+import heroImg from '../assets/me.jpg'
 
 const Hero = () => {
   return (
@@ -48,27 +49,28 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Right Column - Image Placeholder */}
-          <div className="lg:w-1/2">
-            <div className="relative">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-pink-100 to-purple-100 dark:from-gray-800 dark:to-gray-900 overflow-hidden shadow-2xl">
-                <div className="w-full h-full flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="w-48 h-48 md:w-64 md:h-64 mx-auto rounded-full bg-gradient-to-r from-pink-300 to-purple-300 dark:from-pink-700 dark:to-purple-700 flex items-center justify-center mb-6">
-                      <span className="text-6xl md:text-8xl text-white">GZ</span>
-                    </div>
-                    <p className="text-gray-600 dark:text-gray-400 italic">
-                      Your photo or illustration here
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-pink-200 dark:bg-pink-800/30 blur-xl"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 rounded-full bg-purple-200 dark:bg-purple-800/30 blur-xl"></div>
-            </div>
-          </div>
+          {/* Right Column - Image */}
+<div className="lg:w-1/2">
+  <div className="relative">
+    {/* Gradient Background Container */}
+    <div className="aspect-square rounded-2xl bg-gradient-to-br from-pink-100 to-purple-100 dark:from-gray-800 dark:to-gray-900 overflow-hidden shadow-2xl flex items-center justify-center p-4">
+      
+      {/* Circular Photo - now bigger */}
+      <div className="w-full h-full rounded-full overflow-hidden shadow-2xl border-8 border-white dark:border-gray-900">
+        <img 
+          src={heroImg} 
+          alt="Grace Zawadi" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+
+    {/* Decorative Elements */}
+    <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-pink-200 dark:bg-pink-800/30 blur-xl"></div>
+    <div className="absolute -bottom-4 -left-4 w-32 h-32 rounded-full bg-purple-200 dark:bg-purple-800/30 blur-xl"></div>
+  </div>
+</div>
+
         </div>
       </div>
     </section>
