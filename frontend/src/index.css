@@ -71,4 +71,20 @@
   z-index: -1;
   border-radius: 2px;
 }
+.project-card {
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+.tech-box {
+  transition: all 0.2s ease;
+}
+
+.tech-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 }

@@ -1,88 +1,119 @@
 import React from 'react'
-import { FiExternalLink, FiGithub } from 'react-icons/fi'
+import { FiGithub, FiExternalLink } from 'react-icons/fi'
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-featured online store with shopping cart, user authentication, and payment integration.",
-    tech: ["React", "Flask", "PostgreSQL", "Tailwind"],
+    title: "Course Management System",
+    description:
+      "A comprehensive platform for educators and students to manage courses, assignments, and grades.",
+    image: "/projects/course-management.png",
+    tech: ["React", "Python", "Flask", "PostgreSQL", "Tailwind CSS"],
     github: "#",
-    live: "#"
+    live: "#",
+    featured: true,
   },
   {
-    title: "Task Management App",
-    description: "Collaborative project management tool with real-time updates and team collaboration features.",
-    tech: ["React", "Socket.io", "MongoDB", "Express"],
+    title: "Expense Tracker",
+    description:
+      "Personal finance app with expense categorization, budget tracking, and visual analytics.",
+    image: "/projects/expense-tracker.png",
+    tech: ["React", "JavaScript", "REST API", "Node.js"],
     github: "#",
-    live: "#"
+    live: "#",
   },
   {
-    title: "Weather Dashboard",
-    description: "Beautiful weather application with location-based forecasts and interactive charts.",
-    tech: ["React", "Chart.js", "Weather API", "Geolocation"],
+    title: "Event Ticket Management App",
+    description:
+      "Ticketing platform for discovering events and purchasing tickets in real time.",
+    image: "/projects/event-ticket.png",
+    tech: ["React", "Flask", "REST API", "MongoDB", "Tailwind CSS"],
     github: "#",
-    live: "#"
+    live: "#",
   },
   {
-    title: "Blog CMS",
-    description: "Content management system for bloggers with rich text editing and SEO optimization.",
-    tech: ["Flask", "SQLAlchemy", "Markdown", "Redis"],
+    title: "Vacation Planner",
+    description:
+      "Travel planning app for itinerary creation, destination discovery, and collaboration.",
+    image: "/projects/vacation-planner.png",
+    tech: ["React", "JavaScript", "REST API", "Express", "Tailwind CSS"],
     github: "#",
-    live: "#"
-  }
+    live: "#",
+  },
 ]
 
 const Projects = () => {
   return (
     <section id="projects" className="py-12 md:py-20 animate-fade-in">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-        Featured <span className="text-pink-500">Projects</span>
-      </h2>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {projects.map((project, index) => (
-          <div 
-            key={project.title}
-            className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-slide-up"
-            style={{ animationDelay: `${index * 150}ms` }}
-          >
-            <div className="p-6">
-              <div className="h-2 w-16 bg-pink-500 rounded-full mb-4"></div>
-              <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                {project.description}
-              </p>
-              
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.tech.map(tech => (
-                  <span 
-                    key={tech}
-                    className="px-3 py-1 bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-300 rounded-full text-sm"
+      <div className="container mx-auto px-6">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-heading">
+            My Projects
+          </h2>
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            A selection of projects showcasing my growth as a software engineer
+          </p>
+        </div>
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {projects.map((project) => (
+            <div
+              key={project.title}
+              className={`group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 ${
+                project.featured ? 'md:col-span-2' : ''
+              }`}
+            >
+              {/* Image */}
+              <div className="relative overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                  <a
+                    href={project.github}
+                    className="px-5 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition"
                   >
-                    {tech}
-                  </span>
-                ))}
+                    <FiGithub />
+                  </a>
+                  <a
+                    href={project.live}
+                    className="px-5 py-3 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition"
+                  >
+                    <FiExternalLink />
+                  </a>
+                </div>
               </div>
-              
-              <div className="flex space-x-4">
-                <a 
-                  href={project.github}
-                  className="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors"
-                >
-                  <FiGithub />
-                  <span>Code</span>
-                </a>
-                <a 
-                  href={project.live}
-                  className="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors"
-                >
-                  <FiExternalLink />
-                  <span>Live Demo</span>
-                </a>
+
+              {/* Content */}
+              <div className="p-6 md:p-8">
+                <h3 className="text-2xl font-bold mb-3 font-heading">
+                  {project.title}
+                </h3>
+
+                <p className="text-gray-600 dark:text-gray-400 mb-5">
+                  {project.description}
+                </p>
+
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-3 py-1 text-sm rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   )
