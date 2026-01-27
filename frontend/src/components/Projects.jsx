@@ -1,43 +1,48 @@
 import React from 'react'
 import { FiGithub, FiExternalLink } from 'react-icons/fi'
+import coursifyImg from '../assets/coursify.png'
+import ticksyImg from '../assets/ticksy.png'
+import trackerImg from '../assets/tracker.png'
+import vacationImg from '../assets/vacation.png'
+
 
 const projects = [
   {
     title: "Course Management System",
     description:
       "A comprehensive platform for educators and students to manage courses, assignments, and grades.",
-    image: "/projects/course-management.png",
+    image: coursifyImg,
     tech: ["React", "Python", "Flask", "PostgreSQL", "Tailwind CSS"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/Chenzie2/Coursify-frontend",
+    live: "https://coursify-frontend-psi.vercel.app/",
     featured: true,
   },
   {
     title: "Expense Tracker",
     description:
       "Personal finance app with expense categorization, budget tracking, and visual analytics.",
-    image: "/projects/expense-tracker.png",
+    image: trackerImg,
     tech: ["React", "JavaScript", "REST API", "Node.js"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/Chenzie2/expense-tracker",
+    live: "https://expense-tracker-eight-gray.vercel.app/",
   },
   {
     title: "Event Ticket Management App",
     description:
       "Ticketing platform for discovering events and purchasing tickets in real time.",
-    image: "/projects/event-ticket.png",
+    image: ticksyImg,
     tech: ["React", "Flask", "REST API", "MongoDB", "Tailwind CSS"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/Chenzie2/Ticksy-Frontend",
+    live: "https://ticksy-frontend.vercel.app/",
   },
   {
     title: "Vacation Planner",
     description:
       "Travel planning app for itinerary creation, destination discovery, and collaboration.",
-    image: "/projects/vacation-planner.png",
+    image: vacationImg,
     tech: ["React", "JavaScript", "REST API", "Express", "Tailwind CSS"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/Chenzie2/vacation-planner",
+    live: "https://vacation-planner-eta.vercel.app/",
   },
 ]
 

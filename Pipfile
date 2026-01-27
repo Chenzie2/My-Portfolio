@@ -4,9 +4,6 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-flask = "==3.0.0"
-python-dotenv = "==1.0.0"
-flask-cors = "*"
 
 [dev-packages]
 
