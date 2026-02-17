@@ -1,6 +1,6 @@
 # My Portfolio
 
-A modern, responsive personal portfolio showcasing the projects, skills, and contact info of Grace Zawadi, a beginner Full-Stack Software Engineer. Built with React, Tailwind CSS, and interactive components.
+A modern, responsive personal portfolio showcasing the projects, skills, and contact info of Grace Zawadi, a beginner Full-Stack Software Engineer. Built with React, Flask, Tailwind CSS, and interactive components.
 
 ---
 
