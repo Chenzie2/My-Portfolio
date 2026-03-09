@@ -1,8 +1,8 @@
-# Grace Zawadi  Portfolio
+# Portfolio
 
 A modern, responsive personal portfolio built with **React**, **Tailwind CSS**, and a **Flask** backend. Designed to showcase my work as a full-stack developer with a focus on clean UI, elegant interactions, and real-world projects.
 
- **Live Site:** [gracezawadi.vercel.app](#) *(update with your live URL)*
+ **Live Site:** [https://gracezawadi.vercel.app/](#) 
 
 ---
 
@@ -20,7 +20,7 @@ A modern, responsive personal portfolio built with **React**, **Tailwind CSS**, 
 
 ## About
 
-I'm **Grace Zawadi**, a full-stack developer based in Nairobi, Kenya — turning ideas into elegant digital experiences with React, Flask, and Python. I also work with data, using Pandas and NumPy to analyse real-world datasets and draw actionable insights.
+I'm **Grace Zawadi**, a full-stack developer who turns ideas into elegant digital experiences with React, Flask, and Python. I also work with data, using Pandas and NumPy to analyse real-world datasets and draw actionable insights.
 
 Currently levelling up with **TypeScript**, **PostgreSQL**, and **FastAPI**.
 
@@ -28,21 +28,20 @@ Currently levelling up with **TypeScript**, **PostgreSQL**, and **FastAPI**.
 
 ## Features
 
-- ⚡ Responsive, mobile-first design
+- Responsive, mobile-first design
 -  Dark / light mode toggle with system preference detection
 -  Smooth scroll navigation with active section tracking
 -  Categorised skills section (Frontend, Backend, Data & Analytics, Tools)
 -  Data & analytics project showcase alongside web projects
--  Intentional contact section — no broken forms, just real links
 -  Resume download button
--  Staggered Hero animations on load
+
 
 ---
 
 ## Tech Stack
 
 **Frontend**
-- React 18 + Vite
+- React + Vite
 - Tailwind CSS
 - React Icons
 
@@ -62,16 +61,16 @@ Currently levelling up with **TypeScript**, **PostgreSQL**, and **FastAPI**.
 ```
 portfolio/
 ├── frontend/
-│   ├── public/          # favicon, resume PDF
+│   ├── public/         
 │   ├── src/
-│   │   ├── assets/      # project images, profile photo
-│   │   ├── components/  # Navbar, Hero, Skills, Projects, Contact, Footer
+│   │   ├── assets/     
+│   │   ├── components/  
 │   │   ├── App.jsx
 │   │   └── index.css
 │   ├── index.html
 │   └── vite.config.js
 └── backend/
-    ├── app.py           # Flask API (contact endpoint)
+    ├── app.py           
     └── requirements.txt
 ```
 
@@ -91,7 +90,7 @@ npm install
 npm run dev
 ```
 
-Runs at `http://localhost:5173`
+Runs at `https://gracezawadi.vercel.app/`
 
 ### Backend
 
@@ -101,7 +100,7 @@ pipenv install
 pipenv run python app.py
 ```
 
-Runs at `http://localhost:5000`
+Runs at `https://my-portfolio-backend-xv6u.onrender.com`
 
 ---
 
