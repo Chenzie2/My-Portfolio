@@ -3,8 +3,7 @@ import { FiGithub, FiExternalLink, FiUsers } from 'react-icons/fi'
 import { SiGooglecolab } from 'react-icons/si'
 import coursifyImg from '../assets/coursify.png'
 import ticksyImg from '../assets/ticksy.png'
-import trackerImg from '../assets/tracker.png'
-
+import vacationImg from '../assets/vacation.png'
 
 const webProjects = [
   {
@@ -47,7 +46,7 @@ const webProjects = [
 const dataProjects = [
   {
     title: 'Password Strength & Vulnerability Analysis',
-    tagline: 'What makes a password weak and how many people get it wrong?',
+    tagline: 'What makes a password weak — and how many people get it wrong?',
     story:
       'Using a Kaggle dataset of real passwords, this analysis digs into the structural patterns behind weak credentials. Through feature engineering (length, character composition, digit ratios), the findings show that most passwords peak at 6–8 characters and rely on a single character type which is a significant security risk. Closes with actionable recommendations for enforcing stronger password policies.',
     tech: ['Python', 'Pandas', 'NumPy', 'Seaborn', 'Matplotlib', 'Google Colab'],
