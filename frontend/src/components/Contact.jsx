@@ -1,163 +1,131 @@
-import React, { useState } from 'react'
-import { FiSend, FiMail, FiUser, FiMessageSquare } from 'react-icons/fi'
+import React from 'react'
+import { FiMail, FiGithub, FiLinkedin, FiArrowUpRight } from 'react-icons/fi'
+
+const contactChannels = [
+  {
+   
+    label: 'Hiring & Opportunities',
+    description: 'Open to full-time, freelance, or contract roles.',
+    cta: 'Connect on LinkedIn',
+    href: 'https://www.linkedin.com/in/grace-zawadi-3988a2301/',
+    color: 'blue',
+  },
+  {
+    
+    label: 'Collabs & Projects',
+    description: "Have an interesting idea? Let's build something together.",
+    cta: 'Find me on GitHub',
+    href: 'https://github.com/Chenzie2',
+    color: 'gray',
+  },
+  {
+   
+    label: 'Have a conversation',
+    description: "I'm always happy to chat about code, design, or anything in between.",
+    cta: 'Send an Email',
+    href: 'mailto:gracezawadi24@gmail.com',
+    color: 'pink',
+  },
+]
+
+const colorMap = {
+  blue: 'bg-blue-50 dark:bg-blue-900/20 border-blue-100 dark:border-blue-800/30 hover:border-blue-300 dark:hover:border-blue-700',
+  gray: 'bg-gray-50 dark:bg-gray-800/50 border-gray-100 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-500',
+  pink: 'bg-pink-50 dark:bg-pink-900/20 border-pink-100 dark:border-pink-800/30 hover:border-pink-300 dark:hover:border-pink-700',
+}
+
+const ctaColorMap = {
+  blue: 'text-blue-600 dark:text-blue-400',
+  gray: 'text-gray-700 dark:text-gray-300',
+  pink: 'text-pink-500 dark:text-pink-400',
+}
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  })
-
-  const [status, setStatus] = useState({ type: '', message: '' })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-
-  const handleChange = (e) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }))
-  }
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setStatus({ type: '', message: '' })
-
-    try {
-      const response = await fetch('http://localhost:5000/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      })
-
-      const data = await response.json()
-
-      if (data.success) {
-        setStatus({
-          type: 'success',
-          message: 'Message sent successfully! I’ll get back to you soon 💌',
-        })
-        setFormData({ name: '', email: '', message: '' })
-      } else {
-        setStatus({
-          type: 'error',
-          message: data.error || 'Something went wrong. Please try again.',
-        })
-      }
-    } catch {
-      setStatus({
-        type: 'error',
-        message: 'Unable to send message. Please check your connection and try again.',
-      })
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
-
   return (
-    <section id="contact" className="py-12 md:py-20 animate-fade-in">
-      <div className="max-w-2xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-          Get In <span className="text-pink-500">Touch</span>
-        </h2>
+    <section id="contact" className="py-16 md:py-24">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col lg:flex-row gap-16 items-start">
 
-        <p className="text-gray-600 dark:text-gray-300 text-center mb-12">
-          Have a project in mind or just want to say hi? I’d love to hear from you.
-        </p>
+          {/* Left — Personal message */}
+          <div className="lg:w-1/2">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-heading">
+              Let's <span className="text-gradient">Talk</span>
+            </h2>
 
-        {/* Status Message */}
-        {status.message && (
-          <div
-            aria-live="polite"
-            className={`mb-6 p-4 rounded-lg text-sm ${
-              status.type === 'success'
-                ? 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-300'
-                : 'bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-300'
-            }`}
-          >
-            {status.message}
-          </div>
-        )}
+            <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+              Whether you're looking to hire, collaborate on something exciting, or just want to connect I'd love to hear from you.
+            </p>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Name */}
-          <div>
-            <label className="flex items-center text-sm font-medium mb-2">
-              <FiUser className="mr-2 text-pink-500" />
-              Your Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              autoComplete="name"
-              disabled={isSubmitting}
-              className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-pink-500 transition disabled:opacity-60"
-              placeholder="Grace Zawadi"
-            />
-          </div>
-
-          {/* Email */}
-          <div>
-            <label className="flex items-center text-sm font-medium mb-2">
-              <FiMail className="mr-2 text-pink-500" />
-              Email Address
-            </label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              autoComplete="email"
-              disabled={isSubmitting}
-              className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-pink-500 transition disabled:opacity-60"
-              placeholder="gracezawadi24@gmail.com"
-            />
-          </div>
-
-          {/* Message */}
-          <div>
-            <label className="flex items-center text-sm font-medium mb-2">
-              <FiMessageSquare className="mr-2 text-pink-500" />
-              Your Message
-            </label>
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              rows="5"
-              disabled={isSubmitting}
-              className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-pink-500 transition disabled:opacity-60"
-              placeholder="Tell me about your project..."
-            />
-          </div>
-
-          {/* Submit */}
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full flex items-center justify-center px-6 py-4 bg-pink-500 text-white rounded-lg hover:bg-pink-600 disabled:opacity-60 disabled:cursor-not-allowed transition-all transform hover:-translate-y-1 hover:shadow-xl"
-          >
-            <FiSend className="mr-2" />
-            {isSubmitting ? 'Sending message…' : 'Send Message'}
-          </button>
-        </form>
-
-        {/* Direct Email */}
-        <div className="mt-12 text-center">
-          <p className="text-gray-600 dark:text-gray-300">
-            Or email me directly at{' '}
+            {/* Email CTA */}
             <a
               href="mailto:gracezawadi24@gmail.com"
-              className="text-pink-500 hover:underline font-medium"
+              className="group inline-flex items-center gap-3 px-6 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-sm hover:shadow-md hover:border-pink-300 dark:hover:border-pink-700 transition-all duration-300 mb-10 w-full sm:w-auto"
             >
-              gracezawadi24@gmail.com
+              <div className="p-2 bg-pink-50 dark:bg-pink-900/30 rounded-xl">
+                <FiMail className="text-pink-500 text-lg" />
+              </div>
+              <div className="text-left">
+                <p className="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide">Email me at</p>
+                <p className="text-gray-800 dark:text-gray-200 font-semibold group-hover:text-pink-500 transition-colors">
+                  gracezawadi24@gmail.com
+                </p>
+              </div>
+              <FiArrowUpRight className="text-gray-400 group-hover:text-pink-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all ml-auto" />
             </a>
-          </p>
+
+            {/* Social row */}
+            <div>
+              <p className="text-sm text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wide mb-4">
+                Also find me on
+              </p>
+              <div className="flex gap-3">
+                <a
+                  href="https://github.com/Chenzie2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-300 hover:border-pink-300 hover:text-pink-500 dark:hover:border-pink-700 dark:hover:text-pink-400 transition-all duration-200 shadow-sm"
+                >
+                  <FiGithub /> GitHub
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/grace-zawadi-3988a2301/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-300 hover:border-pink-300 hover:text-pink-500 dark:hover:border-pink-700 dark:hover:text-pink-400 transition-all duration-200 shadow-sm"
+                >
+                  <FiLinkedin /> LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Right — Channel cards */}
+          <div className="lg:w-1/2 flex flex-col gap-4 w-full">
+            {contactChannels.map((channel) => (
+              <a
+                key={channel.label}
+                href={channel.href}
+                target={channel.href.startsWith('mailto') ? '_self' : '_blank'}
+                rel="noopener noreferrer"
+                className={`group flex items-start gap-5 p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md ${colorMap[channel.color]}`}
+              >
+                <span className="text-3xl mt-0.5">{channel.icon}</span>
+                <div className="flex-1">
+                  <h3 className="text-base font-bold text-gray-900 dark:text-white mb-1 font-heading">
+                    {channel.label}
+                  </h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
+                    {channel.description}
+                  </p>
+                  <span className={`inline-flex items-center gap-1 text-sm font-semibold ${ctaColorMap[channel.color]}`}>
+                    {channel.cta}
+                    <FiArrowUpRight className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+
         </div>
       </div>
     </section>
