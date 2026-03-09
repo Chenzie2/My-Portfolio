@@ -82,16 +82,6 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
 
           {/* Right Actions */}
           <div className="hidden md:flex items-center space-x-3">
-            {/* GitHub */}
-            <a
-              href="https://github.com/Chenzie2"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-full text-gray-600 dark:text-gray-400 hover:text-pink-500 dark:hover:text-pink-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200"
-              aria-label="GitHub Profile"
-            >
-              <FiGithub className="text-lg" />
-            </a>
 
             {/* Download CV */}
             <a
