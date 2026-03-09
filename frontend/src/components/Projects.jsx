@@ -4,7 +4,7 @@ import { SiGooglecolab } from 'react-icons/si'
 import coursifyImg from '../assets/coursify.png'
 import ticksyImg from '../assets/ticksy.png'
 import trackerImg from '../assets/tracker.png'
-import vacationImg from '../assets/vacation.png'
+
 
 const webProjects = [
   {
@@ -41,17 +41,7 @@ const webProjects = [
     live: 'https://vacation-planner-eta.vercel.app/',
     solo: true,
   },
-  {
-    title: 'Expense Tracker',
-    tagline: 'Personal finance made simple',
-    story:
-      'A lightweight personal finance tool for tracking daily expenses in KES. Features instant search, smart sorting, category filtering, and automatic currency formatting.',
-    image: trackerImg,
-    tech: ['React', 'Vite', 'UUID', 'CSS'],
-    github: 'https://github.com/Chenzie2/expense-tracker',
-    live: 'https://expense-tracker-eight-gray.vercel.app/',
-    solo: true,
-  },
+
 ]
 
 const dataProjects = [
