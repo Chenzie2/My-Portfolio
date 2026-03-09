@@ -113,7 +113,7 @@ Runs at `https://my-portfolio-backend-xv6u.onrender.com`
 | [Coursify](https://coursify-frontend-psi.vercel.app/) | Role-based learning platform with JWT auth, instructor dashboards, and student enrollment | React, Flask, JWT, Formik, Tailwind |
 | [Ticksy](https://ticksy-frontend.vercel.app/) | Mobile-first event ticketing platform with MPESA integration and real-time ticket availability | React, Redux Toolkit, Flask, PostgreSQL |
 | [Vacation Planner](https://vacation-planner-eta.vercel.app/) | Destination discovery app with favourites, filtering, and persistent trip lists | React, React Router, json-server, Tailwind |
-| [Expense Tracker](https://expense-tracker-eight-gray.vercel.app/) | Personal finance tracker with KES formatting, smart sorting, and instant search | React, Vite, CSS |
+
 
 ### Data & Analytics
 
