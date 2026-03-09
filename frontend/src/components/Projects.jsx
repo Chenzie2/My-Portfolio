@@ -57,7 +57,7 @@ const webProjects = [
 const dataProjects = [
   {
     title: 'Password Strength & Vulnerability Analysis',
-    tagline: 'What makes a password weak — and how many people get it wrong?',
+    tagline: 'What makes a password weak and how many people get it wrong?',
     story:
       'Using a Kaggle dataset of real passwords, this analysis digs into the structural patterns behind weak credentials. Through feature engineering (length, character composition, digit ratios), the findings show that most passwords peak at 6–8 characters and rely on a single character type which is a significant security risk. Closes with actionable recommendations for enforcing stronger password policies.',
     tech: ['Python', 'Pandas', 'NumPy', 'Seaborn', 'Matplotlib', 'Google Colab'],
@@ -211,9 +211,6 @@ const Projects = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-heading">
             My <span className="text-gradient">Projects</span>
           </h2>
-          <p className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
-            From full-stack web apps to real-world data analysis — a look at what I've built and the problems I've solved.
-          </p>
         </div>
 
         {/* Web Projects */}
@@ -242,7 +239,7 @@ const Projects = () => {
           </div>
 
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-8 max-w-2xl">
-            Alongside web development, I explore real-world datasets — finding patterns, engineering features, and drawing actionable insights.
+            Alongside web development, I explore real-world datasets; finding patterns, engineering features, and drawing actionable insights.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
