@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { FiSun, FiMoon, FiMenu, FiX, FiDownload, FiGithub } from 'react-icons/fi'
+import { FiSun, FiMoon, FiMenu, FiX, FiFileText, FiGithub } from 'react-icons/fi'
 
 const NAV_LINKS = [
   { label: 'About', id: 'about' },
@@ -13,30 +13,24 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
-  // Track scroll for nav shadow + active section
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10)
-
       const sections = NAV_LINKS.map(link => document.getElementById(link.id))
       const scrollPos = window.scrollY + 100
-
       sections.forEach((section) => {
         if (section && section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
           setActiveSection(section.id)
         }
       })
     }
-
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
+    if (element) element.scrollIntoView({ behavior: 'smooth' })
     setMenuOpen(false)
   }
 
@@ -49,11 +43,8 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
 
-          {/* Logo — GZ monogram */}
-          <button
-            onClick={() => scrollToSection('about')}
-            className="flex items-center space-x-3 group"
-          >
+          {/* Logo */}
+          <button onClick={() => scrollToSection('about')} className="flex items-center space-x-3 group">
             <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-pink-500 to-pink-400 flex items-center justify-center shadow-sm group-hover:shadow-pink-200 dark:group-hover:shadow-pink-900/40 transition-shadow duration-300">
               <span className="text-white font-bold text-sm font-heading tracking-wide">GZ</span>
             </div>
@@ -80,30 +71,23 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
             ))}
           </div>
 
-          {/* Right Actions */}
+          {/* Desktop Right Actions */}
           <div className="hidden md:flex items-center space-x-3">
-
-            {/* Download CV */}
             <a
               href="/grace-zawadi-resume.pdf"
-              download
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-pink-500 hover:bg-pink-600 text-white rounded-full shadow-sm hover:shadow-md transition-all duration-200"
             >
-              <FiDownload className="text-sm" />
+              <FiFileText className="text-sm" />
               Resume
             </a>
-
-            {/* Dark mode toggle */}
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
               aria-label="Toggle dark mode"
             >
-              {darkMode ? (
-                <FiSun className="text-yellow-400" />
-              ) : (
-                <FiMoon className="text-gray-600" />
-              )}
+              {darkMode ? <FiSun className="text-yellow-400" /> : <FiMoon className="text-gray-600" />}
             </button>
           </div>
 
@@ -155,11 +139,12 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                 <FiGithub className="text-lg" />
               </a>
               <a
-                href="/grace-zawadi-cv.pdf"
-                download
+                href="/grace-zawadi-resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-pink-500 hover:bg-pink-600 text-white rounded-full transition-all"
               >
-                <FiDownload className="text-sm" />
+                <FiFileText className="text-sm" />
                 Resume
               </a>
             </div>
